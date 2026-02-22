@@ -54,6 +54,7 @@ $$
 $$
 
 -  Enfoque sobre-relajado
+
 $$
 \mathbf{E}_f = \frac{\mathbf{S}_f \cdot \mathbf{S}_f}{\mathbf{e} \cdot \mathbf{S}_f} \mathbf{e}
 $$
@@ -81,6 +82,7 @@ $$
 $$
 
 -  Enfoque sobre-relajado
+
 $$
 \mathbf{E}_f = \frac{\mathbf{S}_f \cdot \mathbf{S}_f}{\mathbf{e} \cdot \mathbf{S}_f} \mathbf{e}
 $$
@@ -90,6 +92,7 @@ $$
 ## Forma general de los coeficientes
 
 **Forma algebraica general para mallas no ortogonales**
+
 $$
 a_C \phi_C + \sum_{F \in NB(C)} a_F \phi_F = b_C
 $$
@@ -115,6 +118,7 @@ $$
 Se muestram los valores de $F_{Cf}$ y $F_{Ff}$ que aportan la discretización del término difusivo.
 
 **Flujo de difusión en mallas no ortogonales - Forma expandida**
+
 $$
 \sum_{f \in nb(C)} (J_{\phi,D} \cdot \mathbf{S}_f) = \sum_{f \in nb(C)} \Gamma_f D_f (\phi_C - \phi_F) + \sum_{f \in nb(C)} (\Gamma \nabla \phi)_f \cdot \mathbf{T}_f 
 $$
@@ -124,11 +128,13 @@ $$
 $$
 
 **Coeficiente de difusión geométrica para mallas no ortogonales**
+
 $$
 D_f = \frac{E_f}{d_{CF}}
 $$
 
 **Forma algebraica general para mallas no ortogonales**
+
 $$
 a_C \phi_C + \sum_{F \in NB(C)} a_F \phi_F = b_C
 $$
@@ -169,7 +175,6 @@ $$
 J_{\phi,D,b} \cdot \mathbf{S}_{b} = (-\Gamma \nabla\phi)_{b} \cdot S_{b}\mathbf{n} = q_{b}S_{b} = F_{Cb}\phi_{C} + F_{Vb}
 $$
 
-
 $$
 F_{Cb} = 0, \quad F_{Vb} = q_{b}S_{b}
 $$
@@ -194,6 +199,7 @@ J_{\phi,D,b} \cdot \mathbf{S}_b = -\Gamma_b (\nabla \phi)_b \cdot \mathbf{S}_b =
 $$
 
 **Linealización en la frontera para Dirichlet - Malla no ortogonal**
+
 $$
 F_{Cb} = \Gamma_b D_b, \quad \quad F_{Vb} = -\Gamma_b D_b \phi_b - \Gamma_b (\nabla \phi)_b \cdot \mathbf{T}_b, \quad \quad D_b = \frac{E_b}{d_{Cb}}
 $$
@@ -204,28 +210,29 @@ $$
 #### Malla no ortogonal
 
 **Balance de flujo en la frontera para condición mixta**
+
 $$
 J_{\phi,D,b} \cdot \mathbf{S}_b = -\Gamma_b \left[ \frac{\phi_b - \phi_C}{d_{Cb}} E_b + (\nabla \phi)_b \cdot \mathbf{T}_b \right] = -h_{\infty} (\phi_{\infty} - \phi_b) S_b
 $$
 
 **Flujo linealizado en la frontera para condición mixta**
+
 $$
 J_{\phi,D,b} \cdot \mathbf{S}_b = -\left[ \frac{h_{\infty} S_b \frac{\Gamma_b E_b}{d_{Cb}}}{h_{\infty} S_b + \frac{\Gamma_b E_b}{d_{Cb}}} \right] (\phi_{\infty} - \phi_C) - \frac{h_{\infty} S_b \Gamma_b (\nabla \phi)_b \cdot \mathbf{T}_b}{h_{\infty} S_b + \frac{\Gamma_b E_b}{d_{Cb}}} = F_{Cb} \phi_C + F_{Vb}
 $$
 
 **Coeficientes de linealización para frontera mixta**
+
 $$
 F_{Cb} = \frac{h_{\infty} S_b \frac{\Gamma_b E_b}{d_{Cb}}}{h_{\infty} S_b + \frac{\Gamma_b E_b}{d_{Cb}}}, \quad F_{Vb} = -F_{Cb} \phi_{\infty} - \frac{h_{\infty} S_b \Gamma_b (\nabla \phi)_b \cdot \mathbf{T}_b}{h_{\infty} S_b + \frac{\Gamma_b E_b}{d_{Cb}}}
 $$
 
 
 **Cálculo de $\phi$ en la frontera para condición mixta**
+
 $$
 \phi_b = \frac{h_{\infty} S_b \phi_{\infty} + \frac{\Gamma_b E_b}{d_{Cb}} \phi_C - \Gamma_b (\nabla \phi)_b \cdot \mathbf{T}_b}{h_{\infty} S_b + \frac{\Gamma_b E_b}{d_{Cb}}}
 $$
-
-
-
 
 
 #### Malla ortogonal
@@ -237,6 +244,7 @@ J_{\phi,D,b} \cdot \mathbf{S}_{b} = -\left[ \frac{h_{\infty}(\Gamma_{\phi,b}/d_{
 $$
 
 **Coeficientes de linealización para condición mixta**
+
 $$
 F_{Cb} = R_{eq}, \quad F_{Vb} = -R_{eq}\phi_{\infty}
 $$
@@ -271,9 +279,6 @@ $$
 * $ \hat n_f = \mathbf{S}_f / |\mathbf{S}_f| $
 
 
-
-
-
 ## $\nabla \phi_f$
 
 $$
@@ -295,10 +300,6 @@ donde:
 * $ \vec d_{Cf} $  → `mesh.dCf`
 * $ \vec d_{fF} $  → `mesh.dfF`
 
-
-
-
-
 $$
 \nabla \phi_f = \nabla \phi_C
 $$
@@ -313,8 +314,6 @@ $$
 $$
 g_f = \frac{|d_{Cf}|}{|d_{Cf}| + |d_{fF}|}
 $$
-
-
 
 $$
 -\Gamma_b \frac{\phi_b - \phi_C}{d_{Cb}} E_b - \Gamma_b (\nabla\phi)_b \cdot \mathbf{T}_b = S_p \phi_C + S_c
